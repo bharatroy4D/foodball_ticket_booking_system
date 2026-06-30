@@ -1,4 +1,4 @@
--- query-1
+-- QUERY-1
 SELECT
   match_id,
   fixture,
@@ -9,7 +9,7 @@ WHERE
   tournament_category = 'Champions League'
   AND match_status = 'Available';
 
-  -- query-2
+  -- QUERYT-2
 SELECT
   user_id,
   full_name,
@@ -19,3 +19,14 @@ FROM
 WHERE
   full_name LIKE 'Tanvir%'
   OR full_name ilike '%Haque%';
+
+--   QUERY-3
+SELECT
+  booking_id,
+  user_id,
+  booking_id,
+  COALESCE(payment_status, 'Action Required') AS systematic_status
+FROM
+  bookings
+WHERE
+  payment_status IS NULL;
