@@ -7,3 +7,13 @@ CREATE TABLE users (
         CHECK (role IN ('Football Fan', 'Ticket Manager')),
     phone_number VARCHAR(20)
 );
+
+  -- Matches table
+  CREATE TABLE matches(
+  match_id INT primary key,
+  fixture VARCHAR(150) NOT NULL,
+  tournament_category VARCHAR(100),
+  base_ticket_price DECIMAL(10,2),
+  match_status VARCHAR(50)
+  CHECK(match_status IN('Availabe', 'Selling Fast', 'sold Out', 'postponded'))
+  );
